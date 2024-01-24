@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# file_nex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+file_nex is a project that provides a set of tools for working with files. It includes tools for PDF manipulation, image editing, and code-related utilities.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### PDF Tools
 
-## Expanding the ESLint configuration
+- **PDF Compression:** Reduce file size while optimizing for maximal PDF quality.
+- **PDF Merge:** Effortlessly merge multiple PDF files into a single document for streamlined organization and accessibility.
+- *(Add other PDF tools as needed)*
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Image Tools
 
-- Configure the top-level `parserOptions` property like this:
+- *(Include features and tools for image editing)*
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Code Tools
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **JSON Lint:** Improve code readability and structure by formatting JSON files, making them easier to understand and maintain.
+- **String Utilities:** Efficiently manipulate and transform strings with a comprehensive set of utilities. Perform tasks like string concatenation, substring extraction, and more with ease.
+- *(Include other code-related tools as needed)*
+
+## Getting Started
+
+### Prerequisites
+
+- *(List any prerequisites or dependencies needed to run your project)*
+
+### Installation
+
+```bash
+npm install
