@@ -1,11 +1,10 @@
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const useGoBack = (): (() => void) => {
     const navigate = useNavigate();
-    const goBack = (): void => {
+    return (): void => {
         navigate(-1);
     };
-    return goBack;
 };
 
 export default useGoBack;

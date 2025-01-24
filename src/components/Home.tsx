@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import codeIcon from "../assets/coding.png";
 import imageIcon from "../assets/image.png";
 import pdfIcon from "../assets/pdf-svgrepo-com.svg";
 import properties from "../assets/properties.json";
 import Card from "./Card";
+
 export default function Home() {
   return (<>
     <div className="main-message"><h2 >Every tool you need to work with Files in one place</h2></div>
@@ -14,5 +15,5 @@ export default function Home() {
     {/* <Link to="/image-tools">
         <Card cardText={properties.image_description} iconPath={imageIcon} title="Image Tools" />
       </Link> */}
-  </>)
+    </>)
 }

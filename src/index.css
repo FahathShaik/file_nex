@@ -1,88 +1,129 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap');
+/* Apply font-family globally */
 * {
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased; /* For better rendering on webkit-based browsers */
+    -moz-osx-font-smoothing: grayscale; /* For macOS high-quality font rendering */
+}
+
+/* Apply Source Code Pro font to code elements */
+code, pre {
+    font-family: 'Source Code Pro', monospace;
+}
+
+body {
+    background: #e6e6e6; /* A dull, light gray background color */
+    color: #333; /* A dark text color for contrast */
+    margin: 0;
+    padding: 0;
 }
 
 .navbar-brand {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .main-message {
-  display: flex;
-  justify-content: center;
-  padding: 15px;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
 }
 
 .main-message h2 {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .card {
-  width: 18rem;
-  margin: 15px;
-  display: inline-block;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  height: 250px;
-  /* Set a fixed height for all cards */
-  overflow: hidden;
+    width: 18rem;
+    margin: 15px;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: 250px;
+    /* Set a fixed height for all cards */
+    overflow: hidden;
 }
 
 .card:hover {
-  background-color: #f1eeee;
-  /* color: white; */
+    background-color: #f1eeee;
+    /* color: white; */
 }
 
 .card-img-top {
-  width: 75px;
-  height: 75px;
-  display: flex;
-  justify-content: center;
-  /* Horizontal centering */
-  align-items: center;
-  /* Vertical centering */
-  margin-left: 10px;
-  padding: 5px;
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    /* Horizontal centering */
+    align-items: center;
+    /* Vertical centering */
+    margin-left: 10px;
+    padding: 5px;
 }
 
 .card-title {
-  font-weight: bolder;
+    font-weight: bolder;
 }
 
 .backButton {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 15px;
-  padding: 0;
-  border: none;
-  background: none;
-  outline: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 15px;
+    padding: 0;
+    border: none;
+    background: none;
+    outline: none;
 }
 
 .backButton img {
-  width: 40px;
-  height: 40px;
-  margin-top: 60px;
+    width: 40px;
+    height: 40px;
+    margin-top: 60px;
 }
 
-.pdf-tools-container {
-  margin-left: 60px;
+.tools-container {
+    margin-left: 40px;
 }
 
 .mainIcon {
-  height: 30px;
-  width: 30px;
+    height: 30px;
+    width: 30px;
 }
 
 .json-container {
-  display: flex;
+    display: flex;
 }
 
 .btn.json-format {
-  color: white;
-  font-size: 20px;
-  height: 50px;
-  width: 100px;
-  background: #198754;
+    color: white;
+    font-size: 20px;
+    height: 50px;
+    width: 100px;
+    background: #198754;
 }
+
+/* Breadcrumb Styles */
+.breadcrumb-custom {
+    --bs-breadcrumb-divider: '>'; /* Custom breadcrumb divider */
+    margin-left: 70px;
+    margin-top: 20px;
+    display: inline-block; /* Center-align and compact breadcrumb */
+}
+
+/* Breadcrumb Link Style */
+.breadcrumb-link {
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Bootstrap primary color */
+    font-weight: 500; /* Medium font weight */
+}
+
+/* Active Breadcrumb Item Style */
+.breadcrumb-active {
+    color: #6c757d; /* Gray color for active item */
+    font-weight: 700; /* Bold font for active item */
+}
+
