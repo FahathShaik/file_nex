@@ -19,6 +19,31 @@ body {
     color: #333; /* A dark text color for contrast */
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+    background: #333;
+    color: #e6e6e6;
+}
+
+body.dark .card {
+    background: #444;
+    color: #e6e6e6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .card:hover {
+    background-color: #555;
+}
+
+body.dark .navbar {
+    background-color: #222 !important;
+    color: #e6e6e6;
+}
+
+body.dark .navbar-brand {
+    color: #e6e6e6;
 }
 
 .navbar-brand {
