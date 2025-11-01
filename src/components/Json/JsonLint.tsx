@@ -1,16 +1,18 @@
-import React, {useCallback, useState} from "react";
+import React, {useCallback} from "react";
 import ReactCodeMirror from "@uiw/react-codemirror";
 import {json} from "@codemirror/lang-json";
 import useGoBack from "../navigations/useGoBack.ts";
 import BackButton from "../BackButtonProps.tsx";
 import Swal from "sweetalert2";
 import {Link} from "react-router-dom";
+import Card from "../Card.tsx";
 
 function JsonLint(): JSX.Element {
-    const [value, setValue] = useState<string>(
+    const [value, setValue] = React.useState<string>(
         '{"name": "John","age": 30,"city": "New York"}'
     );
-    const [copied, setCopied] = useState<boolean>(false);
+    const [copied, setCopied] = React.useState<boolean>(false);
+    const goBack = useGoBack();
 
     const onChange = useCallback((val: string): void => {
         setValue(val);
@@ -59,27 +61,32 @@ function JsonLint(): JSX.Element {
 
     return (
         <>
-            <BackButton onClick={useGoBack()}/>
-
-            <nav aria-label="breadcrumb" className="breadcrumb-custom">
-                <ol className="breadcrumb">
-                    <li className="breadcrumb-item">
-                        <Link to="/" className="breadcrumb-link">Home</Link>
-                    </li>
-                    <li className="breadcrumb-item">
-                        <Link to="/code-tools" className="breadcrumb-link">Code Tools</Link>
-                    </li>
-                    <li className="breadcrumb-item breadcrumb-active" aria-current="page">
-                        Json Lint
-                    </li>
-                </ol>
-            </nav>
-
-
             <div style={styles.container}>
-                <h4 className="text-black-50">
-                    To format and validate your JSON, just copy + paste it below:
-                </h4>
+                <div style={styles.header}>
+                    <BackButton onClick={goBack}/>
+                    <h1 style={styles.title}>JSON Lint</h1>
+                </div>
+
+                <nav aria-label="breadcrumb" className="breadcrumb-custom">
+                    <ol className="breadcrumb">
+                        <li className="breadcrumb-item">
+                            <Link to="/" className="breadcrumb-link">Home</Link>
+                        </li>
+                        <li className="breadcrumb-item">
+                            <Link to="/code-tools" className="breadcrumb-link">Code Tools</Link>
+                        </li>
+                        <li className="breadcrumb-item breadcrumb-active" aria-current="page">
+                            Json Lint
+                        </li>
+                    </ol>
+                </nav>
+
+                <Card
+                    title="JSON Lint"
+
+                    description="JSON Lint is a tool that helps you format and validate your JSON. To format and validate your JSON, just copy and paste it below:"
+                />
+
                 <div style={styles.editorButtonsContainer}>
                     <div style={{...styles.editorContainer, position: "relative"}}>
                         <ReactCodeMirror
@@ -181,7 +188,6 @@ const getInvalidJsonAlert = () => {
     });
 };
 
-
 const copyButtonStyle: React.CSSProperties = {
     position: "absolute",
     top: "10px",
@@ -192,38 +198,38 @@ const copyButtonStyle: React.CSSProperties = {
 
 const styles: { [key: string]: React.CSSProperties } = {
     container: {
-        fontFamily: "Source Code Pro",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
+        fontFamily: "Source Code Pro, monospace",
         padding: "20px",
-        borderRadius: "8px",
-        boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
         minHeight: "calc(100vh - 80px)",
     },
+    header: {
+        display: 'flex',
+        alignItems: 'center',
+        marginBottom: '20px',
+    },
+    title: {
+        marginLeft: '20px',
+        fontSize: '2rem',
+        fontWeight: 'bold',
+        color: '#333',
+    },
     editorButtonsContainer: {
-        display: "flex",
-        flexDirection: "row",
-        gap: "20px",
-        alignItems: "flex-start",
-        width: "100%",
+        display: 'grid',
+        gridTemplateColumns: '1fr auto',
+        gap: '20px',
+        width: '100%',
     },
     editorContainer: {
-        flexGrow: 1,
-        width: "70%",
+        position: 'relative',
     },
     codeMirror: {
-        backgroundColor: "#ffffff",
-        borderRadius: "8px",
-        padding: "10px",
-        boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+        borderRadius: '8px',
+        border: '1px solid #ccc',
     },
     buttonsContainer: {
-        display: "flex",
-        flexDirection: "column",
-        gap: "10px",
-        justifyContent: "center",
-        width: "15%",
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px',
     },
 };
 
